@@ -2,7 +2,11 @@
     "name": "@pulse/core",
     "version": "1.0.0",
     "description": "Core engine and rule definitions for Pulse scanner",
-    "main": "./src/loader.js",
+    "main": "./dist/loader.js",
+    "types": "./dist/loader.d.ts",
+    "files": [
+        "dist"
+    ],
     "type": "module",
     "private": false,
     "publishConfig": {
