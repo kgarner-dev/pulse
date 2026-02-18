@@ -1,11 +1,11 @@
 import { chromium } from 'playwright';
 import chalk from 'chalk';
-import { RuleLoader } from '@pulse/core';
-import { NetworkScanner } from '@pulse/core/services/NetworkScanner.js';
-import { SecurityScanner } from '@pulse/core/services/SecurityScanner.js';
-import { FormScanner } from '@pulse/core/services/FormScanner.js';
-import { ContextService } from '@pulse/core/services/ContextService.js';
-import { Finding } from '@pulse/core/types.js';
+import { RuleLoader } from '@kalebgarner/pulse-core';
+import { NetworkScanner } from '@kalebgarner/pulse-core/services/NetworkScanner.js';
+import { SecurityScanner } from '@kalebgarner/pulse-core/services/SecurityScanner.js';
+import { FormScanner } from '@kalebgarner/pulse-core/services/FormScanner.js';
+import { ContextService } from '@kalebgarner/pulse-core/services/ContextService.js';
+import { Finding } from '@kalebgarner/pulse-core/types.js';
 
 interface ReportCategory {
     name: string;
