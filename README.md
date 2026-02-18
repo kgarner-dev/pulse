@@ -30,12 +30,6 @@ pulse <url>
 pulse https://your-healthcare-app.com
 ```
 
-## Project Structure
-
-This is a monorepo consisting of:
-- `apps/cli`: The command-line interface tool.
-- `packages/core`: Core engine, scanners, and rule definitions.
-
 ## Development
 
 1. Install dependencies:
@@ -49,4 +43,4 @@ This is a monorepo consisting of:
 
 ## License
 
-MIT © Vital Labs
+MIT
