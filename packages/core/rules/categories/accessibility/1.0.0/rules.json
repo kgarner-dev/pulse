@@ -1,0 +1,95 @@
+{
+    "category": "accessibility",
+    "updated": "2025-02-17",
+    "description": "Web Content Accessibility Guidelines compliance for healthcare applications.",
+    "rules": [
+        {
+            "id": "ACC-001",
+            "category": "accessibility",
+            "severity": "high",
+            "title": "Missing Alt Text on Images",
+            "description": "Images on the page are missing the 'alt' attribute, making them inaccessible to screen readers.",
+            "why_it_matters": "Alternative text is essential for people who use screen readers to understand the content and function of images. For healthcare apps, this ensures that visual information is accessible to all patients.",
+            "what_happened": "Image(s) detected without 'alt' attribute",
+            "resolution": "Add a descriptive 'alt' attribute to all <img> tags. Use alt='' for purely decorative images.",
+            "check": {
+                "type": "accessibility_check",
+                "context_required": false
+            },
+            "citations": [
+                "WCAG 2.1 SC 1.1.1 - Non-text Content (Level A)",
+                "Section 508 §1194.22(a) - Text Equivalents"
+            ]
+        },
+        {
+            "id": "ACC-002",
+            "category": "accessibility",
+            "severity": "medium",
+            "title": "Insufficient Color Contrast",
+            "description": "The contrast ratio between text and its background is below the required threshold.",
+            "why_it_matters": "Proper color contrast is necessary for users with visual impairments to read content easily. Healthcare information must be clearly legible for all users.",
+            "what_happened": "Text detected with insufficient color contrast ratio",
+            "resolution": "Update the colors to ensure a contrast ratio of at least 4.5:1 for normal text and 3:1 for large text.",
+            "check": {
+                "type": "accessibility_check",
+                "context_required": false
+            },
+            "citations": [
+                "WCAG 2.1 SC 1.4.3 - Contrast (Level AA)"
+            ]
+        },
+        {
+            "id": "ACC-003",
+            "category": "accessibility",
+            "severity": "medium",
+            "title": "Missing Page Language",
+            "description": "The page does not have a 'lang' attribute defined on the <html> element.",
+            "why_it_matters": "The 'lang' attribute helps screen readers and browsers identify the language of the page, ensuring correct pronunciation and rendering.",
+            "what_happened": "Missing 'lang' attribute on <html> element",
+            "resolution": "Add the appropriate 'lang' attribute to the <html> tag (e.g., <html lang='en'>).",
+            "check": {
+                "type": "accessibility_check",
+                "context_required": false
+            },
+            "citations": [
+                "WCAG 2.1 SC 3.1.1 - Language of Page (Level A)"
+            ]
+        },
+        {
+            "id": "ACC-004",
+            "category": "accessibility",
+            "severity": "medium",
+            "title": "Missing Heading Structure",
+            "description": "The page does not have a logical heading structure (e.g., missing <h1> or skipping levels).",
+            "why_it_matters": "Headings provide structure and navigation for screen reader users. A logical hierarchy is crucial for understanding the layout of complex healthcare information.",
+            "what_happened": "Logical heading structure is missing or incorrect",
+            "resolution": "Ensure a single <h1> per page and use <h2> through <h6> in a logical, nested manner.",
+            "check": {
+                "type": "accessibility_check",
+                "context_required": false
+            },
+            "citations": [
+                "WCAG 2.1 SC 1.3.1 - Info and Relationships (Level A)",
+                "WCAG 2.1 SC 2.4.6 - Headings and Labels (Level AA)"
+            ]
+        },
+        {
+            "id": "ACC-005",
+            "category": "accessibility",
+            "severity": "high",
+            "title": "Keyboard Navigation Issues",
+            "description": "Interactive elements are not reachable or usable via keyboard navigation alone.",
+            "why_it_matters": "Many users rely on keyboards or assistive devices instead of a mouse. All functionality must be accessible via keyboard to ensure patients with motor impairments can use the application.",
+            "what_happened": "Interactive elements detected that are not focusable or usable via keyboard",
+            "resolution": "Ensure all interactive elements (links, buttons, forms) have clear focus states and can be operated with the keyboard.",
+            "check": {
+                "type": "accessibility_check",
+                "context_required": false
+            },
+            "citations": [
+                "WCAG 2.1 SC 2.1.1 - Keyboard (Level A)",
+                "WCAG 2.1 SC 2.4.7 - Focus Visible (Level AA)"
+            ]
+        }
+    ]
+}

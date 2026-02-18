@@ -1,0 +1,22 @@
+{
+    "name": "pulse",
+    "private": true,
+    "description": "The open-source, context-aware compliance engine for healthcare frontends",
+    "workspaces": [
+        "apps/*",
+        "packages/*"
+    ],
+    "scripts": {
+        "build": "npm run build --workspaces --if-present",
+        "test": "npm test --workspaces --if-present"
+    },
+    "keywords": [
+        "hipaa",
+        "compliance",
+        "scanner",
+        "privacy",
+        "security"
+    ],
+    "author": "Kaleb Garner",
+    "license": "MIT"
+}

@@ -1,0 +1,27 @@
+{
+    "id": "portal",
+    "name": "Patient Portal",
+    "definitions": {
+        "url_patterns": [
+            "/portal",
+            "/login",
+            "/account",
+            "/dashboard",
+            "/my-health",
+            "/profile"
+        ],
+        "form_field_patterns": [
+            "username",
+            "password",
+            "email",
+            "mrn"
+        ],
+        "content_patterns": [
+            "patient portal",
+            "sign in to your account",
+            "my records",
+            "personal health record",
+            "log in"
+        ]
+    }
+}

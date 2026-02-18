@@ -1,0 +1,43 @@
+{
+    "id": "phi-context",
+    "version": "1.0.0",
+    "description": "Shared definitions for detecting Protected Health Information (PHI) context",
+    "definitions": {
+        "url_patterns": [
+            "/patient",
+            "/portal",
+            "/appointment",
+            "/schedule",
+            "/medical",
+            "/health",
+            "/symptoms",
+            "/diagnosis",
+            "/treatment",
+            "/prescription",
+            "/insurance",
+            "/billing",
+            "/dental",
+            "/services"
+        ],
+        "form_field_patterns": [
+            "patient",
+            "medical",
+            "diagnosis",
+            "medication",
+            "insurance",
+            "ssn",
+            "dob",
+            "mrn",
+            "health",
+            "condition",
+            "symptom",
+            "provider"
+        ],
+        "content_patterns": [
+            "protected health information",
+            "patient portal",
+            "medical record",
+            "health information"
+        ]
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "version": "1.0.0",
+    "updated": "2025-02-03T00:00:00Z",
+    "categories": {
+        "hipaa-tracking": {
+            "active": true,
+            "version": "1.0.0",
+            "name": "HIPAA Tracking"
+        },
+        "accessibility": {
+            "active": true,
+            "version": "1.0.0",
+            "name": "WCAG"
+        },
+        "security": {
+            "active": true,
+            "version": "1.0.0",
+            "name": "Security & Compliance"
+        },
+        "hipaa-forms": {
+            "active": true,
+            "version": "1.0.0",
+            "name": "HIPAA Forms"
+        }
+    }
+}

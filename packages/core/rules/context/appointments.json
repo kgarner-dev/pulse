@@ -1,0 +1,28 @@
+{
+    "id": "appointments",
+    "name": "Appointments & Scheduling",
+    "definitions": {
+        "url_patterns": [
+            "/appointments",
+            "/schedule",
+            "/booking",
+            "/visit",
+            "/request-appointment",
+            "/calendar"
+        ],
+        "form_field_patterns": [
+            "date",
+            "time",
+            "reason",
+            "provider",
+            "location"
+        ],
+        "content_patterns": [
+            "book an appointment",
+            "schedule your visit",
+            "appointment details",
+            "upcoming visits",
+            "find a provider"
+        ]
+    }
+}

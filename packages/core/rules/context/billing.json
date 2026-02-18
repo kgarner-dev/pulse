@@ -1,0 +1,31 @@
+{
+    "id": "billing",
+    "name": "Billing & Insurance",
+    "definitions": {
+        "url_patterns": [
+            "/billing",
+            "/insurance",
+            "/payment",
+            "/checkout",
+            "/invoice",
+            "/claim",
+            "/financial-assistance"
+        ],
+        "form_field_patterns": [
+            "card",
+            "number",
+            "expiry",
+            "cvv",
+            "policy",
+            "group",
+            "insurance"
+        ],
+        "content_patterns": [
+            "your bill",
+            "insurance information",
+            "pay online",
+            "explanation of benefits",
+            "financial records"
+        ]
+    }
+}

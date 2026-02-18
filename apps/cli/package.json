@@ -1,0 +1,37 @@
+{
+    "name": "@pulse/cli",
+    "version": "1.0.0",
+    "description": "The open-source, context-aware compliance engine for healthcare frontends.",
+    "type": "module",
+    "main": "./dist/index.js",
+    "bin": {
+        "pulse": "./dist/index.js"
+    },
+    "private": false,
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build": "esbuild src/audit.ts --bundle --platform=node --format=esm --outfile=dist/index.js --external:playwright --external:chalk",
+        "start": "node dist/index.js"
+    },
+    "keywords": [
+        "pulse",
+        "cli",
+        "hipaa",
+        "scanner",
+        "compliance"
+    ],
+    "author": "Kaleb Garner",
+    "license": "MIT",
+    "dependencies": {
+        "@pulse/core": "^1.0.0",
+        "chalk": "^5.3.0",
+        "playwright": "^1.41.0"
+    },
+    "devDependencies": {
+        "esbuild": "^0.20.0",
+        "tsx": "^4.7.1",
+        "typescript": "^5.3.3"
+    }
+}

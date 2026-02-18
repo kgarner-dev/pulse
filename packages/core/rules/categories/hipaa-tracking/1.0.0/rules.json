@@ -1,0 +1,159 @@
+{
+    "category": "hipaa-tracking",
+    "updated": "2025-02-16",
+    "description": "Detects tracking scripts on pages with medical context (procedures, treatments, etc.) that may expose data to unauthorized third parties",
+    "rules": [
+        {
+            "id": "TRK-001",
+            "category": "hipaa-tracking",
+            "severity": "critical",
+            "title": "Meta Pixel (Facebook) Detected",
+            "description": "Meta Pixel tracking detected on a page with medical context (procedures, treatments, etc.)",
+            "why_it_matters": "Covered entities must not disclose PHI to unauthorized third parties without proper authorization or BAA. Tracking pixels transmit IP addresses, user behavior, and page URLs that reveal medical context.",
+            "what_happened": "Meta Pixel detected on page containing medical context",
+            "resolution": "Remove Meta Pixel from all pages containing medical context",
+            "check": {
+                "type": "contains",
+                "patterns": [
+                    "facebook.com/tr",
+                    "connect.facebook.net",
+                    "facebook.net"
+                ],
+                "context_required": true
+            },
+            "citations": [
+                "45 CFR § 164.502(a) - Uses and Disclosures of PHI",
+                "HHS Bulletin on Online Tracking Technologies (Dec 2022)",
+                "Novant Health Settlement: $1.5M (June 2024)"
+            ]
+        },
+        {
+            "id": "TRK-002",
+            "category": "hipaa-tracking",
+            "severity": "critical",
+            "title": "Google Analytics Detected",
+            "description": "Google Analytics tracking detected on a page with medical context without confirmed Business Associate Agreement",
+            "why_it_matters": "Google Analytics can be HIPAA-compliant with proper configuration and a signed BAA. However, standard GA4 implementation without BAA violates HIPAA when used on pages with medical context.",
+            "what_happened": "Google Analytics detected on page with medical context without confirmed Business Associate Agreement",
+            "resolution": "Verify BAA with Google or remove analytics from pages with medical context",
+            "check": {
+                "type": "contains",
+                "patterns": [
+                    "google-analytics.com",
+                    "googletagmanager.com"
+                ],
+                "context_required": true
+            },
+            "citations": [
+                "45 CFR § 164.308(b)(1) - Business Associate Contracts",
+                "45 CFR § 164.502(e) - Standard: Disclosures to Business Associates",
+                "HHS Bulletin on Online Tracking Technologies (Dec 2022)"
+            ]
+        },
+        {
+            "id": "TRK-003",
+            "category": "hipaa-tracking",
+            "severity": "critical",
+            "title": "TikTok Pixel Detected",
+            "description": "TikTok tracking pixel detected on a page with medical context (procedures, treatments, etc.)",
+            "why_it_matters": "TikTok pixel transmits user behavior and page context to TikTok's advertising platform. On healthcare pages, this constitutes unauthorized disclosure of medical context.",
+            "what_happened": "TikTok tracking pixel detected on page containing medical context",
+            "resolution": "Remove TikTok pixel from all pages with medical context",
+            "check": {
+                "type": "contains",
+                "patterns": [
+                    "analytics.tiktok.com",
+                    "tiktok.com/i18n/pixel"
+                ],
+                "context_required": true
+            },
+            "citations": [
+                "45 CFR § 164.502(a) - Uses and Disclosures of PHI",
+                "HHS Bulletin on Online Tracking Technologies (Dec 2022)",
+                "Novant Health Settlement: $1.5M (June 2024)"
+            ]
+        },
+        {
+            "id": "TRK-004",
+            "category": "hipaa-tracking",
+            "severity": "high",
+            "title": "Session Replay Tool Detected",
+            "description": "Session replay or screen recording tool detected on a page with medical context",
+            "why_it_matters": "Session replay tools record user interactions. On healthcare pages, these recordings may capture medical context such as symptoms or conditions, constituting unauthorized disclosure without a BAA.",
+            "what_happened": "Session replay or screen recording tool detected on page containing medical context",
+            "resolution": "Remove session replay tools from all pages containing medical context",
+            "check": {
+                "type": "contains",
+                "patterns": [
+                    "hotjar.com",
+                    "fullstory.com",
+                    "logrocket.io",
+                    "smartlook.com",
+                    "mouseflow.com",
+                    "inspectlet.com",
+                    "sessionstack.com"
+                ],
+                "context_required": true
+            },
+            "citations": [
+                "45 CFR § 164.502(a) - Uses and Disclosures of PHI",
+                "45 CFR § 164.308(a)(4) - Information Access Management",
+                "HHS Bulletin on Online Tracking Technologies (Dec 2022)"
+            ]
+        },
+        {
+            "id": "TRK-005",
+            "category": "hipaa-tracking",
+            "severity": "critical",
+            "title": "LinkedIn Insight Tag Detected",
+            "description": "LinkedIn Insight Tag tracking detected on a page with medical context",
+            "why_it_matters": "LinkedIn Insight Tag transmits user behavior and page context. On healthcare pages, this constitutes unauthorized disclosure as LinkedIn does not offer HIPAA-compliant tracking.",
+            "what_happened": "LinkedIn Insight Tag detected on page containing medical context",
+            "resolution": "Remove LinkedIn Insight Tag from all pages containing medical context",
+            "check": {
+                "type": "contains",
+                "patterns": [
+                    "snap.licdn.com",
+                    "px.ads.linkedin.com",
+                    "linkedin.com/px"
+                ],
+                "context_required": true
+            },
+            "citations": [
+                "45 CFR § 164.502(a) - Uses and Disclosures of PHI",
+                "HHS Bulletin on Online Tracking Technologies (Dec 2022)",
+                "Novant Health Settlement: $1.5M (June 2024)"
+            ]
+        },
+        {
+            "id": "TRK-006",
+            "category": "hipaa-tracking",
+            "severity": "critical",
+            "title": "Twitter/X Pixel Detected",
+            "description": "Twitter/X conversion tracking pixel detected on a page with medical context",
+            "why_it_matters": "Twitter/X pixel transmits user identifiers, page URLs, and behavioral data to Twitter/X's advertising platform. Twitter/X does not offer HIPAA-compliant tracking or BAAs. Use on healthcare pages creates unauthorized PHI disclosure.",
+            "what_happened": "Twitter/X pixel detected on page containing medical context",
+            "resolution": "Remove Twitter/X pixel from all pages containing medical context",
+            "check": {
+                "type": "contains",
+                "patterns": [
+                    "static.ads-twitter.com",
+                    "analytics.twitter.com",
+                    "t.co/i/adsct",
+                    "ads-twitter.com",
+                    "ads-api.twitter.com",
+                    "static.ads-x.com",
+                    "analytics.x.com",
+                    "ads-api.x.com",
+                    "t.co/1/jot"
+                ],
+                "context_required": true
+            },
+            "citations": [
+                "45 CFR § 164.502(a) - Uses and Disclosures of PHI",
+                "HHS Bulletin on Online Tracking Technologies (Dec 2022)",
+                "Novant Health Settlement: $1.5M (June 2024)"
+            ]
+        }
+    ]
+}

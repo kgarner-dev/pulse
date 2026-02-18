@@ -1,0 +1,44 @@
+{
+    "category": "security",
+    "updated": "2025-02-16",
+    "description": "Security best practices for healthcare applications",
+    "rules": [
+        {
+            "id": "SEC-001",
+            "category": "security",
+            "severity": "high",
+            "title": "Missing Essential Security Headers",
+            "description": "One or more essential security headers are missing from the HTTP response",
+            "why_it_matters": "Security headers like CSP, HSTS, and X-Frame-Options provide critical defense-in-depth against common web vulnerabilities like XSS, clickjacking, and protocol downgrades.",
+            "what_happened": "Missing critical security headers: {headers}",
+            "resolution": "Configure your web server to include all essential security headers (CSP, HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy).",
+            "check": {
+                "type": "header_check",
+                "context_required": false
+            },
+            "citations": [
+                "45 CFR § 164.312(a)(1) - Access Controls",
+                "NIST 800-53 - Security Controls",
+                "OWASP Top 10:2021 - A05 Security Misconfiguration"
+            ]
+        },
+        {
+            "id": "SEC-002",
+            "category": "security",
+            "severity": "critical",
+            "title": "Insecure Connection (HTTP)",
+            "description": "The site is being served over an insecure HTTP connection instead of HTTPS",
+            "why_it_matters": "All healthcare applications must use HTTPS to encrypt data in transit and protect against man-in-the-middle attacks, as required by HIPAA Technical Safeguards.",
+            "what_happened": "Site is served over insecure HTTP protocol",
+            "resolution": "Redirect all HTTP traffic to HTTPS and ensure a valid TLS certificate is installed.",
+            "check": {
+                "type": "protocol_check",
+                "context_required": false
+            },
+            "citations": [
+                "45 CFR § 164.312(e)(1) - Transmission Security",
+                "45 CFR § 164.312(e)(2)(ii) - Encryption Standard"
+            ]
+        }
+    ]
+}

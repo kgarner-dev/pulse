@@ -1,0 +1,30 @@
+{
+    "id": "symptoms",
+    "name": "Symptoms & Research",
+    "definitions": {
+        "url_patterns": [
+            "/symptoms",
+            "/conditions",
+            "/treatment",
+            "/diagnosis",
+            "/medical-advice",
+            "/health-library",
+            "/research"
+        ],
+        "form_field_patterns": [
+            "symptom",
+            "condition",
+            "diagnosis",
+            "medication",
+            "treatment"
+        ],
+        "content_patterns": [
+            "symptoms of",
+            "treating",
+            "diagnosis",
+            "medical condition",
+            "clinical research",
+            "patient education"
+        ]
+    }
+}

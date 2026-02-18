@@ -1,0 +1,62 @@
+{
+    "category": "hipaa-forms",
+    "updated": "2025-02-17",
+    "description": "Detects improper handling of PHI in form fields",
+    "rules": [
+        {
+            "id": "FRM-001",
+            "category": "hipaa-forms",
+            "severity": "high",
+            "title": "Insecure Form Submission Method",
+            "description": "A form collecting PHI is using an insecure submission method that may expose sensitive data in URLs or transmit data insecurely.",
+            "why_it_matters": "Forms that use GET method place all field data directly into the URL, which is logged in browser history, server logs, analytics platforms, and referrer headers. Forms submitting to HTTP endpoints transmit PHI in plain text. Both violate HIPAA's requirement to safeguard PHI during transmission.",
+            "what_happened": "Form with PHI fields detected using insecure submission method: {method}",
+            "resolution": "Change form method to POST and ensure the action URL uses HTTPS. Never use GET method for forms collecting PHI.",
+            "check": {
+                "type": "form_submission_check",
+                "context_required": true
+            },
+            "citations": [
+                "45 CFR § 164.312(e)(1) - Transmission Security",
+                "45 CFR § 164.530(c) - Safeguards"
+            ]
+        },
+        {
+            "id": "FRM-002",
+            "category": "hipaa-forms",
+            "severity": "high",
+            "title": "Autocomplete on PHI Fields",
+            "description": "Form fields that may contain PHI have autocomplete enabled, which could lead to sensitive data being cached or suggested on shared devices.",
+            "why_it_matters": "The HIPAA Security Rule requires entities to implement technical safeguards to protect PHI. Enabling autocomplete on sensitive fields like SSN, medical ID, or diagnosis increases the risk of unauthorized access to PHI in shared or public environments.",
+            "what_happened": "Sensitive field '{field}' has autocomplete enabled",
+            "resolution": "Set autocomplete='off' or use a more specific, non-caching value for sensitive PHI fields.",
+            "check": {
+                "type": "form_autocomplete_check",
+                "context_required": true
+            },
+            "citations": [
+                "45 CFR § 164.530(c) - Safeguards",
+                "NIST 800-66 Rev. 2 - HIPAA Security Rule Implementation"
+            ]
+        },
+        {
+            "id": "FRM-003",
+            "category": "hipaa-forms",
+            "severity": "medium",
+            "title": "Missing Form Labels",
+            "description": "Form inputs are missing associated label elements, impacting both accessibility and clarity of data collection.",
+            "why_it_matters": "Properly labeled forms are essential for accessibility (WCAG) and ensure that users understand exactly what PHI they are providing. Missing labels can lead to errors in data entry which may impact data integrity.",
+            "what_happened": "Form input '{field}' is missing a corresponding label or ARIA description",
+            "resolution": "Add a <label> element with a 'for' attribute matching the input ID, or use 'aria-label'/'aria-labelledby'.",
+            "check": {
+                "type": "form_label_check",
+                "context_required": false
+            },
+            "citations": [
+                "WCAG 2.1 SC 1.3.1 - Info and Relationships (Level A)",
+                "WCAG 2.1 SC 3.3.2 - Labels or Instructions (Level A)",
+                "Section 508 §1194.21(l) - Form Elements"
+            ]
+        }
+    ]
+}

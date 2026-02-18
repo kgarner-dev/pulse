@@ -1,0 +1,19 @@
+{
+    "name": "@pulse/core",
+    "version": "1.0.0",
+    "description": "Core engine and rule definitions for Pulse scanner",
+    "main": "./src/loader.js",
+    "type": "module",
+    "private": false,
+    "publishConfig": {
+        "access": "public"
+    },
+    "keywords": [
+        "pulse",
+        "core",
+        "hipaa",
+        "rules"
+    ],
+    "author": "Kaleb Garner",
+    "license": "MIT"
+}
