@@ -1,10 +1,12 @@
 {
     "name": "@kaleb.garner/pulse",
-    "version": "1.0.3",
+    "version": "1.0.8",
     "description": "The open-source, context-aware compliance engine for healthcare frontends.",
     "type": "module",
     "main": "dist/index.js",
-    "bin": "dist/index.js",
+    "bin": {
+        "pulse": "dist/index.js"
+    },
     "files": [
         "dist"
     ],
@@ -13,7 +15,7 @@
         "access": "public"
     },
     "scripts": {
-        "build": "esbuild src/audit.ts --bundle --platform=node --format=esm --outfile=dist/index.js --external:playwright --external:chalk --banner:js=\"#!/usr/bin/env node\"",
+        "build": "esbuild src/audit.ts --bundle --platform=node --format=esm --outfile=dist/index.js --external:playwright --external:chalk --external:@kaleb.garner/pulse-core --banner:js=\"#!/usr/bin/env node\"",
         "start": "node dist/index.js",
         "prepublishOnly": "npm run build"
     },
@@ -27,7 +29,7 @@
     "author": "Kaleb Garner",
     "license": "MIT",
     "dependencies": {
-        "@kaleb.garner/pulse-core": "^1.0.0",
+        "@kaleb.garner/pulse-core": "^1.0.4",
         "chalk": "^5.3.0",
         "playwright": "^1.41.0"
     },

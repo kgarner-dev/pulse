@@ -1,11 +1,13 @@
 import { chromium } from 'playwright';
 import chalk from 'chalk';
-import { RuleLoader } from '@kaleb.garner/pulse-core';
-import { NetworkScanner } from '@kaleb.garner/pulse-core/services/NetworkScanner.js';
-import { SecurityScanner } from '@kaleb.garner/pulse-core/services/SecurityScanner.js';
-import { FormScanner } from '@kaleb.garner/pulse-core/services/FormScanner.js';
-import { ContextService } from '@kaleb.garner/pulse-core/services/ContextService.js';
-import { Finding } from '@kaleb.garner/pulse-core/types.js';
+import {
+    RuleLoader,
+    NetworkScanner,
+    SecurityScanner,
+    FormScanner,
+    ContextService,
+    Finding
+} from '@kaleb.garner/pulse-core';
 
 interface ReportCategory {
     name: string;
@@ -204,7 +206,7 @@ function renderReport(
             console.log('\nWhy it matters:');
             console.log(`  → ${f.rule.why_it_matters}`);
             console.log('\nCitations:');
-            f.rule.citations?.forEach(citation => {
+            f.rule.citations?.forEach((citation: string) => {
                 console.log(`  → ${citation}`);
             });
             console.log('\nResolution:');

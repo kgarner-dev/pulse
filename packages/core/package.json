@@ -1,11 +1,15 @@
 {
     "name": "@kaleb.garner/pulse-core",
-    "version": "1.0.0",
+    "version": "1.0.4",
     "description": "Core engine and rule definitions for Pulse scanner",
-    "main": "./dist/loader.js",
-    "types": "./dist/loader.d.ts",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": "./dist/index.js"
+    },
     "files": [
-        "dist"
+        "dist",
+        "rules"
     ],
     "type": "module",
     "private": false,
