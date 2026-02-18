@@ -1,5 +1,5 @@
 {
-    "name": "@kalebgarner/pulse-core",
+    "name": "@kaleb.garner/pulse-core",
     "version": "1.0.0",
     "description": "Core engine and rule definitions for Pulse scanner",
     "main": "./dist/loader.js",
