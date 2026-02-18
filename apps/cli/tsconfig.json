@@ -9,10 +9,10 @@
         "forceConsistentCasingInFileNames": true,
         "baseUrl": ".",
         "paths": {
-            "@kalebgarner/pulse-core": [
+            "@kaleb.garner/pulse-core": [
                 "../../packages/core/src/loader.ts"
             ],
-            "@kalebgarner/pulse-core/*": [
+            "@kaleb.garner/pulse-core/*": [
                 "../../packages/core/src/*"
             ]
         }
